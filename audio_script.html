@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioConvert</title>
+</head>
+<body>
+    <div>
+        <button id="speak">Click to speak</button>
+        <p id=" textarea"></p>
+    </div>
+    <div>
+        <!-- <textarea placeholder="convert text.."id="textarea"></textarea> -->
+        <form action="/post" method="post" target="_blank" id="textarea">
+            <textarea name="q" type="text" placeholder="convert text..." autocomplete="off" autofocus></textarea>
+            <!-- <input type="text" id="transcript"> -->
+            <!-- <button type="button"><i class="fas fa-microphone"></i></button> -->
+          </form>
+    </div>
+    <form action="/get" method="get" id = "textarea" ></form>
+    
+</body>
+
+<script>
+    var speak = document.getElementById('speak');
+    var textarea = document.getElementById('textarea');
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var recognition = new SpeechRecognition();
+    speak.addEventListener('click', function () {
+        recognition.start();
+        textarea.innerHTML = '...speaking';
+    })
+    recognition.onresult = function (e) {
+        var transcript = e.results[0][0].transcript;
+        textarea.innerHTML = transcript;
+
+
+        const url = `"http://localhost:5000/search/:'${transcript}'"`;
+fetch(url, {
+  method: "GET",
+  withCredentials: true,
+  headers: {
+    "X-Auth-Token": "ef72570ff371408f9668e414353b7b2e",
+    "Content-Type": "application/json"
+  }
+})
+  .then(resp => resp.json())
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+
+
+
+    }
+
+
+   
+
+
+    
+
+</script>
+</html>
