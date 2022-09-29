@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="all.css" rel="stylesheet"/>
+    <title>New custom</title>
+</head>
+<style>
+    body{
+        background-color: rgb(250, 219, 177);
+    }
+    .input2{
+        padding-top: 10px;
+        align-items: center;
+        margin: 10px;
+        width: 25%;
+    }
+    .button2{
+        color: green;
+        width:10%;
+        margin: 10px;
+        height: 25px;
+    }
+    .button2:hover{
+        color: green;
+        background-color: greenyellow;
+    }
+    .button3{
+        color: green;
+        width:14.5%;
+        height: 25px;
+    }
+    .button3:hover{
+        color: green;
+        background-color: greenyellow;
+    }
+  </style>
+<body>
+    <h2>ENTER YOUR DETAILS HERE</h2>
+   
+    <div class="container" id="input-cont"></div>
+    <form class="form1" action="/" method="post" >
+        ID<br><input class="input2" type="text" name="id" ><br>
+        NAME<br><input class="input2" type="text" name="name"><br>
+        EMAIL<br><input class="input2" type="text" name="email"><br>
+        MOBILE<br><input class="input2" type="text" name="mobile"><br>
+        <input class="input2" type="file" accept=".csv,xlxs" name="csvxlsx"><br>
+        <input type="file" id="myform" style="display: none;">
+        <button class="button2" type="submit">SUBMIT</button>
+        <button class="button3" id="newpop" type="button" onclick="addInput()"> + Add custom Field</button>
+        <input type="button" value="button name" onclick="window.open('http://www.website.com/page')" />
+    </form>
+      <script>
+        $('#OpenImgUpload').click(function(){ 
+        $('#appreciationUpload').trigger('click'); });
+
+        onclick="window.open(this.href,'popUpWindow','height=400,width=600,left=10,top=10,,scrollbars=yes,menubar=no'); return false;"
+    </script>
+    <script>
+        const container = document.getElementById('input-cont');
+        var maxInputAllowed = 2;
+        var inputCount = 0;
+        
+        // Call addInput() function on button click
+        function addInput(){
+            inputCount++; // Increment input count by one
+            if(inputCount>2){
+                alert('You can add only 2 input fields.');
+                return;
+            }
+            let input = document.createElement('input');
+            input.placeholder = 'Type something';
+            container.appendChild(input);
+          
+        }
+    </script>
+
+</body>
+</html>

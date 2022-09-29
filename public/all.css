@@ -1,0 +1,22 @@
+
+    .input2{
+        padding-top: 10px;
+        align-items: center;
+        margin: 10px;
+        width: 25%;
+    }
+    .button2{
+        color: green;
+    }
+    .button2:hover{
+        color: green;
+        background-color: greenyellow;
+    }
+    .button3{
+        color: green;
+    }
+    .button3:hover{
+        color: green;
+        background-color: greenyellow;
+    }
+  
