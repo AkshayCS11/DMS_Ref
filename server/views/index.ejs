@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New custom</title>
+</head>
+<body>
+    <h2>ENTER YOUR DETAILS HERE</h2>
+   
+    <div class="container"></div>
+    <form class="form1" action="/update" method="post" >
+        ID<br><input class="input2" type="text" name="_id" value="<%=data._id%>"><br>
+        NAME<br><input class="input2" type="text" name="name"value="<%=data.name%>"><br>
+        EMAIL<br><input class="input2" type="text" name="email"value="<%=data.email%>"><br>
+        MOBILE<br><input class="input2" type="text" name="mobile"value="<%=data.mobile%>"><br>
+        <button class="button2" type="submit">SUBMIT</button>
+        <button class="button3" type="submit">Add Custom Field</button>
+    </form>
+</body>
+</html>
