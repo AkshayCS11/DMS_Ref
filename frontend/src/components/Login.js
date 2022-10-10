@@ -18,6 +18,11 @@ const Login = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  function eve() {
+    document.getElementById('container').hidden = true;
+  }
+
   const sendRequest = async () => {
     const res = await axios
       .post("http://localhost:5000/api/login", {
@@ -36,9 +41,10 @@ const Login = () => {
       .then(() => history("/user"));
   };
   return (
-    <div className="container">
+    <div id="container">
       <form onSubmit={handleSubmit}>
-        <h1>Log In</h1>
+      <button className="btn-close" onClick={eve} >X</button>
+          <h1>Log In</h1>
           <input name="email" onChange={handleChange} type="email"nvalue={inputs.email} placeholder="Enter your Email" required/>
           <input name="password" onChange={handleChange} type="password" value={inputs.password} placeholder="Enter your Password" required/>
           <input type="submit" placeholder="Log In" />

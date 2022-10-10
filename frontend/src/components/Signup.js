@@ -6,6 +6,7 @@ import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOut
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
+
 const Signup = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -37,11 +38,13 @@ const Signup = () => {
   };
   const headerStyle = { margin:0 }
 
-
+  function close() {
+    document.getElementById('container').hidden = true;
+}
   return (
-    <div className="container tab">
+    <div id="container">
       <form onSubmit={handleSubmit}>
-                    
+                    <button className="btn-close" onClick={close} >X</button>
                     <h1 style={headerStyle}>Sign Up</h1>
                     <h4> Please fill this form to create an account</h4>
                     <input name="name" value={inputs.name} onChange={handleChange} type="text" placeholder="Enter your name" required/>

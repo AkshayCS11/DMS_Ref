@@ -13,13 +13,13 @@ function App() {
   return (
     <React.Fragment>
       <header>
-        <Header />
+        <Header/>
       </header>
       <main>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          {isLoggedIn && <Route path="/user" element={<Welcome />} />}{" "}
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
+          {isLoggedIn && <Route path="/user" element={<Welcome/>}/>}
         </Routes>
       </main>
     </React.Fragment>

@@ -35,7 +35,7 @@ const Welcome = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <div>{user && <h1>{user.name}</h1>}</div>;
+  return (<div>{user && <h1>{user.name}</h1>}</div>);
 };
 
 export default Welcome;
